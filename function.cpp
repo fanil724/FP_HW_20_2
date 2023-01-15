@@ -1,6 +1,7 @@
 #include <iostream>
 #include <random>
 
+
 using namespace std;
 
 void FillingArrayRandomValuesInt(int *array, size_t size, int a, int b) {
@@ -13,7 +14,7 @@ void FillingArrayRandomValuesInt(int *array, size_t size, int a, int b) {
 
 void FillingArrayRandomValuesDuoble(double *array, size_t size, int a, int b) {
     random_device random;
-    uniform_int_distribution<int> distribution(a, b);
+    uniform_int_distribution<int> distribution(a*100, b*100);
     for (int i = 0; i < size; i++) {
         array[i] = (double) distribution(random) / 100;
     }

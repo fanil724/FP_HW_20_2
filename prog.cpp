@@ -1,27 +1,35 @@
 #include <iostream>
-#include "function.h"
+#include "function.cpp"
 
 int main() {
-    const size_t size = 10;
+#define INTEGER
+#include "function.h"
+    const size_t size=10;
     int arr[size]{0};
-    char array[size]{0};
-    double arra[size]{0};
-    FillingArray(arr, size, -20, 20);
-    FillingArray(array, size, 170, 200);
-    FillingArray(arra, size, -2000, 2000);
-
-    cout<<" "<<Min(arr,size)<<"\n";
-
-    ShowArray(array, size);
-    ShowArray(arr, size);
-    ShowArray(arra, size);
-
+    FillingArray(arr, size,-20,20);
+    std::cout << " " << Min(arr, size) << "\n";
+    Show(arr, size);
     SortArray(arr, size);
-    ShowArray(arr, size);
+    Show(arr, size);
+#undef INTEGER
 
+#define CHAR
+#include "function.h"
+    char array[size]{0};
+    FillingArray(array, size,160,200);
+    std::cout << " " << Min(array, size) << "\n";
+    Show(array, size);
     SortArray(array, size);
-    ShowArray(array, size);
+    Show(array, size);
+#undef CHAR
 
+#define DOUBLE
+#include "function.h"
+    double arra[size]{0};
+    FillingArray(arra, size,-20,20);
+    std::cout << " " << Min(arra, size) << "\n";
+    Show(arra, size);
     SortArray(arra, size);
-    ShowArray(arra, size);
+    Show(arra, size);
+#undef DOUBLE
 }
